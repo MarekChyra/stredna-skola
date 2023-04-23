@@ -1,0 +1,9 @@
+Ciele:
+Vysvetliť ako spoločné funkcie aplikačnej, prezentačnej a relačnej vrstvy zabezpečujú sieťové služby pre aplikácie koncového užívateľa
+Popísať spôsob komunikácie, výhody a nevýhody klient-server a peer-to-peer sietí·   Analyzovať možnosti legálneho a nelegálneho použitia peer-to-peer sietí na zdieľanie obsahu·   Pomocou softvéru pre analýzu prevádzky na sieti určiť základné znaky a typ komunikácie v sieti·   Vysvetliť pojem plaintextový protokol·   Definovať funkciu protokolov HTTP, DNS, FTP, POP, SMTP, IMAP, TELNET
+Porovnať protokoly HTTP a HTTPS, FTP a SFTP, TELNET a SSH
+Popísať ako protokoly aplikačnej vrstvy komunikujú s aplikáciami
+Definovať funkciu protokolu HTTP
+Porovnať vlastnosti protokolov HTTP a HTTPS 
+Definovať funkciu protokolu SMTP, POP3, IMAP, DNS, FTP
+    Vysvetliť výhody DHCP protokolu oproti statickému prideľovaniu IP parametrov

@@ -1,0 +1,41 @@
+/*
+A
+
+racek fareba pozadie, farba oramovanie, farba pismo
+nadpis: css animations (vycentorvany)
+posunie sa dole a zmeni farbu pozadia
+posunie sa do prava a zmeni farbu pisma
+delay 2s
+duration 8s
+iterations 2
+smer priebehu dopredu
+*/
+
+@keyframes meno {
+    0% {background-color: yellow; color: white; border-color: white; top: 0px; left: 10px;}
+    50% {background-color: black; color: red; border-color: green; top: 100px; left: 10px;}
+    100% {background-color: blue; color: hotpink; border: yellow; top: 100px; left: 100px;}
+}
+
+div {
+    position: absolute;
+    text-align: center;
+    border: solid;
+    height: 50px;
+    width: 100px;
+    animation-name: meno;
+    animation-duration: 8s;
+    animation-delay: 2s;
+    animation-iteration-count: 2;
+    animation-direction: normal;
+}
+
+img {
+    transition: transform 5s;
+    position: absolute;
+    top: 150px;
+}
+
+img:hover {
+    transform: skew(50deg) translate(5px, 5px) rotate(50deg);
+}

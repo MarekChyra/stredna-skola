@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+	<title>Cisco krok za krokom</title>
+	<meta charset="utf-8">
+	<link rel="icon" href="../../img/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/CSSmain.css">
+	<link rel="stylesheet" type="text/css" href="../css/CSSccna.css">
+
+</head>
+<body>
+	<header>
+		
+		<div class="page_name">
+			<a href="../../index.php" target="_self" class="page_name_a">
+
+				<h1 class="page_name">CCNA Slovensky</h1>
+			</a>
+		</div>
+
+			<nav class="mojnavbar"> 
+				<ul class="ulnavbar">
+					<li class="linavbar"><a href="../../index.php" class="navbar_link">Domov</a></li>
+					<li class="linavbar"><a href="../novinky.php" class="navbar_link">Novinky</a></li>
+					<li class="linavbar"><a href="../pt_download.php" class="navbar_link">Stiahni PT</a></li>
+					<li class="linavbar"><a href="../kontakt.php" class="navbar_link kontakt">Kontakt</a></li>
+					<li class="linavbar linavbarcisco"><a href="../cisco.php" class="navbar_link"><img src="../../img/cisco.jpg" class="nav_cisco_img" alt="cisco obrazok"></a></li>
+					<li class="linavbar"><a href="../forum/forum.php" class="navbar_link">Fórum</a></li>
+			
+				</ul>
+			</nav>
+	</header>
+
+	<article>
+
+		<div class="hlavne"> 
+			<table class="navigacia">
+				<tr>
+					<td class="navigacia">
+						<a href="ccna1_8.php" class="btn btn-info btn-lg naspat">
+	       				<span class="glyphicon glyphicon-menu-left"></span>Podsieťovanie
+	       				</a>
+					</td>
+					<td class="navigacia">
+						<h4>CCNA1 - Kapitola 9</h4>
+						<h2 class="prvy ccnanadpis">Transport layer (Prepravná vrstva)</h2>	
+					</td>
+					<td class="navigacia">
+						<a href="ccna1_10.php" class="btn btn-info btn-lg dopredu"> 
+	     			   Application layer (Aplikačná vrstva) <span class="glyphicon glyphicon-menu-right"></span> 
+	     			  	</a>	
+					</td>
+				</tr>
+			</table>
+			<hr style="width: 100%;">
+			<p class="article_text">
+				V tejto kapitole sa budeme učiť o transportnej vrstve modelu OSI, a naučíme sa následovné:
+				<ul class="moje_ul1">
+					<li>Opísať účel transportnej vrstvy pri riadení prenosu údajov v rámci komplexnej komunikácie.</li>
+					<li>Opísať protokoly TCP a UDP vrátane čísel portov a ich použitia.</li>
+					<li>Určiť, či sú vhodnejšie pre bežné aplikácie buď vysoko spoľahlivé prenosy TCP alebo nezaručené prenosy UDP.</li>
+				</ul>
+			</p>
+			<img src="../../img/transport_img1.PNG" width="60%">
+			<hr>
+			<a data-toggle="collapse" href="#tvrstapro" class="zobrazenie viewMore">
+				<h2 class="druhy">Transportná vrstva a jej protokoly</h2> <span class="glyphicon glyphicon-plus"></span>
+			</a>
+			<div id="tvrstapro" class="collapse">
+				<p class="article_text">
+					Transportná vrstva je zodpovedná za vytvorenie dočasného prepojenia medzi dvoma aplikáciami a za dodávanie údajov medzi nimi. Aplikácia generuje údaje, ktoré sa odosielajú z aplikácie na zdrojovom hostiteľovi a posielajú sa do aplikácie na cieľovom hostiteľovi. Toto nemá vplyv na typ cieľového hostiteľa, druh média, cez ktoré sa musia údaje pohybovať, cesta, ktorou údaje prechádzajú, preťaženie spojenia alebo veľkosť siete. Transportná vrstva vytvára spojenie medzi aplikačnou vrstvou a spodnými vrstvami, ktoré sú zodpovedné za prenos v sieti.
+				</p>
+				<hr style="width: 30%;">
+				<h2 class="druhy">Úlohy transportnej vrstvy</h2>
+				<p class="article_text"><strong class="zvyraznenie">Sledovanie jednotlivých konverzácií</strong> <br> Na transportnej vrstve je každá skupina údajov, ktorá tečie medzi zdrojovou aplikáciou a cieľovou aplikáciou, známa ako konverzácia (obrázok nižšie). Hostiteľ môže mať viac aplikácií, ktoré komunikujú v celej sieti súčasne. Každá z týchto aplikácií komunikuje s jednou alebo viacerými aplikáciami na jednom alebo viacerých vzdialených hostiteľoch.</p>
+				<img src="../../img/transport_img2.PNG" width="40%">
+				<p class="article_text">
+					<strong class="zvyraznenie">Rozdelovanie údajov do segmentov a opätovné zloženie týchto segmentov</strong> <br> Údaje musia byť pripravené na odoslanie cez médiá v spravovateľných kúskoch. Väčšina sietí má obmedzenia na množstvo údajov, ktoré môžu byť obsiahnuté v jednom pakete. Protokoly transportnej vrstvy majú služby, ktoré segmentujú aplikačné údaje do blokov, ktoré majú primeranú veľkosť (obrázok nižšie).Táto služba zahŕňa encapsuláciu požadovanú pre každý údaj. Do každého bloku údajov sa pridá záhlavie, ktoré sa používa na opätovné zostavenie segmentov. Používa sa aj na sledovanie toku údajov. V mieste určenia musí byť transportná vrstva schopná rekonštruovať kúsky údajov(segmenty) na úplný dátový tok, ktorý je potrebný pre aplikačnú vrstvu.
+				</p>
+				<p class="article_text">
+					<strong class="zvyraznenie">Identifikácia aplikácií</strong> <br> Na prenos dátových tokov do správnych aplikácií musí transportná vrstva identifikovať cieľovú aplikáciu. Aby sa to dosiahlo, transportná vrstva priradí každej aplikácii identifikátor nazývaný <strong class="zvyraznenie">číslo portu</strong>. Každému softvérovému procesu, ktorý potrebuje prístup k sieti, je pridelené číslo portu jedinečné pre tohto hostiteľa.
+				</p>
+				<hr style="width: 30%;">
+				<h2 class="druhy">Conversation multiplexing</h2>
+				<p class="article_text">
+					Posielanie niektorých typov údajov (napríklad streamované videa) v sieti ako jeden kompletný komunikačný tok môže spotrebovať všetku dostupnú šírku pásma. To potom zabráni tomu, aby sa súčasne vyskytla iná komunikácia. Obrázok ukazuje, že rozdelovanie(segmentovanie) údajov na menšie kúsky umožňuje vkladanie (multiplexing) údajov z viacerých komunikácií do dátového toku, a tým pádom sa nezahltí celá sieť napr. streamovaním videa. <br> Na identifikáciu každého segmentu údajov transportná vrstva pridá hlavičku obsahujúcu binárne údaje usporiadané do niekoľkých polí. Hodnoty v týchto poliach umožňujú rôznym protokolom transportnej vrstvy vykonávať rôzne funkcie pri riadení dátovej komunikácie.
+				</p>
+				<img src="../../img/transport_img3.PNG" width="40%">
+				<hr style="width: 30%;">
+				<h2 class="druhy">Spoľahlivosť transportnej vrstvy</h2>
+				<p class="article_text">
+					Transportná vrstva je tiež zodpovedná za spoľahlivosť konverzácie. Rôzne aplikácie majú rôzne požiadavky na spoľahlivosť prepravy dát. <br> IP sa týka iba štruktúry, adresovania a smerovania paketov. IP nešpecifikuje spôsob doručovania alebo prepravy paketov. Transportné protokoly určujú spôsob prenosu dát medzi hostiteľmi. TCP / IP poskytuje dva protokoly transportnej vrstvy, TCP (Transmission Control Protocol) a UDP (User Datagram Protocol), ako je to znázornené na obrázku. IP používa tieto prenosové protokoly na umožnenie hostiteľom komunikovať a prenášať údaje. <br> TCP sa považuje za spoľahlivý, plne funkčný protokol transportnej vrstvy, ktorý zaisťuje, že všetky údaje dorazia na miesto určenia. To si však vyžaduje ďalšie polia v hlavičke TCP, ktoré zväčšujú veľkosť paketu a tiež zvyšujú oneskorenie. Naopak, UDP je jednoduchší protokol transportnej vrstvy, ktorý nezabezpečuje spoľahlivosť(môže sa stať, že sa dáta nedoručia). Preto má menej polí a je rýchlejšií ako TCP.
+				</p>
+				<img src="../../img/transport_img4.PNG" width="40%">
+				<h2 class="druhy">Protokol TCP</h2>
+				<p class="article_text">
+					Prenos TCP je prenos dát, pri ktorom sú sledované pakety od zdroja k cieľu. <br>
+					S TCP existujú tri základné operácie spoľahlivosti: <br>
+					<ul class="moje_ul1">
+						<li>Číslovanie a sledovanie dátových segmentov prenášaných na konkrétneho hostiteľa z konkrétnej aplikácie</li>
+						<li>Potvrdenie prijatia údajov odoslaním správy na zdrojového hostiteľa</li>
+						<li>Opakované odoslanie po určitom časovom období akýchkoľvek údajov, ktoré neboli potvrdené, že sa prijali</li>
+					</ul>
+				</p>
+				<object data="https://youtube.com/embed/YJO2JUjbUu4" width="560" height="315"></object> <br>
+				<hr style="width: 30%;">
+				<h2 class="druhy">Protokol UDP</h2>
+				<p class="article_text">
+					Pri TCP je spoľahlivosť doručenia veľmi vysoká, ale zároveň aj narastá zaťaženie siete, a oneskorenie dodania správ. Pri niektorých formách komunikácie(volania, video streaming...) není až tak veľmi potrebná spoľahlivosť ako rýchlosť prijatia paketov, a preto je vyžadovaný kompromis medzi týmito dvoma hodnotami. A práve na toto je vhodný protokol UDP. <br>
+					UDP poskytuje segmentovanie údajov medzi rozličnými aplikáciami, s veľmi malou kontrolou údajov, a tým pádom sa tak moc nezahlcuje sieť. <br>
+					UDP je známy aj ako "best-effort" protokol. UDP sa je ale pomerne nespoľahlivý oproti TCP, pretože neexistuje potvrdenie o tom, že údaje sa prijalu v cieľovom mieste. <br>
+				</p>
+				<object data="https://youtube.com/embed/lA_hwOHD7xQ" width="560" height="315"></object> <br>
+				<hr style="width: 30%;">
+				<h2 class="druhy">Zvolenie správneho protokolu pre jednotlivé komunikácie</h2>
+				<p class="article_text">
+					<strong class="zvyraznenie">TCP</strong> <br>Pre niektoré aplikácie musia segmenty prísť vo veľmi špecifickom poradí, aby boli úspešne spracované, a pri iných zas musia byť všetky dáta do posledného bitu úspešne prijaté. V obidvoch týchto prípadoch sa TCP používa ako prenosový protokol.
+					Vývojári aplikácií si musia zvoliť, ktorý typ transportného protokolu je vhodný na základe požiadaviek ich aplikácií.
+				</p>	
+				<p class="article_text">
+					Napríklad aplikácie, ako sú databázy, webové prehliadače a e-maili, vyžadujú, aby všetky odoslané údaje dorazili do cieľa v pôvodnom stave. Akékoľvek chýbajúce údaje môžu spôsobiť veľké problémy a chyby v komunikácií, ktorá sa stane neúplnou alebo nečitateľnou. Tieto aplikácie sú navrhnuté na používanie protokolu TCP.
+				</p>
+				<p class="article_text">
+					<strong class="zvyraznenie">UDP</strong> <br>V iných prípadoch môže aplikácia tolerovať určitú stratu dát počas prenosu v sieti, ale oneskorenie v prenose dát je neprijateľné. UDP je lepšou voľbou pre tieto aplikácie, pretože menej zahlcuje sieť, a nevyžaduje kontrolu prijatia údajov, a tým pádom znižuje režijné náklady(zahlcovanie siete a pod.). UDP je vhodnejší pre aplikácie, ako je streamovanie živého zvuku, live streaming a Voice over IP (VoIP).
+				</p>
+				<p class="article_text">
+					Napríklad, ak jeden alebo dva segmenty streamovaného videa nedorazia, spôsobí to chviľkové prerušenie dátového toku. Môže sa to javiť ako skreslenie v obraze alebo zvuku, ale nemusí to byť pre používateľa vôbec viditeľné. Ak by cieľové zariadenie malo znova vyžadovať stratené údaje od zdroja, tak prenos údajov by bol značne oneskorený a klesla by aj kvalita prenášaného zvuku alebo obrazu. V tomto prípade je lepšie vzdať sa stratených údajov a prenášať tie ktoré sa ďalej odosielajú protokolom UDP.
+				</p>
+				<img src="../../img/transport_img5.PNG" width="40%">
+			</div> <hr>
+			<a data-toggle="collapse" href="#tcpudp" class="zobrazenie viewMore">
+				<h2 class="druhy">TCP a UDP</h2> <span class="glyphicon glyphicon-plus"></span>
+			</a>
+			<div id="tcpudp" class="collapse">
+				<h2 class="druhy">Funkcie TCP</h2>	
+				<p class="article_text">
+					Aby sme porozumeli rozdielom medzi TCP a UDP, je dôležité pochopiť, ako každý protokol implementuje špecifické funkcie spoľahlivosti a ako sledujú konverzácie. Okrem podpory základných funkcií segmentácie a opätovného zostavenia údajov poskytuje TCP, ako je to znázornené na obrázku, aj ďalšie služby.
+					<ul class="moje_ul1">
+						<li><strong class="zvyraznenie">Zriadenie relácie</strong> - TCP je protokol zameraný na pripojenie. Protokol zameraný na pripojenie je protokol, ktorý pred odoslaním akejkoľvek prevádzky realizuje a vytvára trvalé spojenie (alebo reláciu) medzi zdrojovým a cieľovým zariadením. Prostredníctvom zriadenia relácie zariadenia dojednávajú množstvo prenosu, ktoré sa môže poslať v danom čase, a komunikačné dáta medzi nimi sa dajú starostlivo riadiť.</li>
+						<li><strong class="zvyraznenie">ZSpoľahlivé doručenie</strong> - Z hľadiska siete znamená spoľahlivosť zabezpečenie toho, aby každý segment, ktorý zdroj pošle, dorazil do cieľa. Pre veľa dôvodov, je možné, že sa segment poškodí alebo úplne stratí, pretože sa prenáša cez sieť.</li>
+						<li><strong class="zvyraznenie">Dodanie rovnakých odoslyných údajov</strong> - Pretože siete môžu poskytovať viac trás, ktoré môžu mať rôzne prenosové rýchlosti, dáta môžu prísť v nesprávnom poradí. Číslovaním segmentov, TCP môže zabezpečiť, aby sa tieto segmenty znova zostavili do správneho poradia.</li>
+						<li><strong class="zvyraznenie">Kontrola toku</strong> - Sieťoví hostitelia majú obmedzené zdroje, napríklad pamäť a výpočtový výkon. Keď si je TCP vedomý, že tieto prostriedky sú preťažené, môže požiadať, aby odosielajúca aplikácia znížila rýchlosť toku údajov. To sa dosahuje pomocou TCP regulujúceho množstvo údajov, ktoré zdroj vysiela. Kontrola toku môže zabrániť potrebe opakovaného prenosu údajov, keď sú zdroje prijímajúceho hostiteľa ohromené.</li>
+					</ul>
+				</p>
+				<hr style="width: 30%;">
+				<h2 class="druhy">Hlavička TCP</h2>
+				<p class="article_text">
+					TCP je stavový protokol. Stavový protokol je protokol, ktorý sleduje stav komunikačnej relácie. Na sledovanie stavu relácie TCP zaznamená, ktoré informácie poslal a ktoré informácie boli potvrdené, že boli prijaté. <br>
+					Stavová relácia sa začína zriadením relácie a končí ukončením relácie. <br>
+					Ako je znázornené na obrázku, každý segment TCP má v hlavičke zapuzdrenej údaje aplikačnej vrstvy 20 bajtov réžie:
+				</p>
+				<table class="textobrazok">
+					<tr>
+						<td width="60%">
+							<ul class="moje_ul1">
+								<li> <strong class="zvyraznenie">Zdrojový port (16 bitov) a Cieľový port (16 bitov) </strong> - Používa sa na identifikáciu aplikácie. </li>
+								<li> <strong class="zvyraznenie">Poradové číslo  (Sequence number - 32 bitov) </strong> - Používa sa na účely opätovného usporiadania segmentov údajov. </li>
+								<li> <strong class="zvyraznenie">Potvrdzovacie číslo (Acknowledgement number - 32 bitov) </strong> - Označuje, že údaje boli prijaté a ďalší bajt sa očakáva od zdroja. </li>
+								<li> <strong class="zvyraznenie">Dĺžka záhlavia (4 bity) </strong> - známa ako „posun údajov“. Označuje dĺžku hlavičky segmentu TCP. </li>
+								<li> <strong class="zvyraznenie">Reserved (6 bitov) </strong> - toto pole je vyhradené pre budúcnosť. </li>
+								<li> <strong class="zvyraznenie">Kontrolné bity (6 bitov </strong>) - Zahŕňa bitové kódy, alebo príznaky, ktoré označujú účel a funkciu segmentu TCP. </li>
+								<li> <strong class="zvyraznenie">Veľkosť okna (16 bitov) </strong> - Označuje počet bajtov, ktoré môžu byť prijaté naraz. </li>
+								<li> <strong class="zvyraznenie">Kontrolný súčet ( Checksum - 16 bitov) </strong> - Používa sa na kontrolu chýb v záhlaví segmentu a údajoch. </li>
+								<li> <strong class="zvyraznenie">Urgent (Naliehavé - 16 bitov) </strong> - Označuje, či sú údaje naliehavé. </li>
+							</ul>
+						</td>
+						<td width="40%">
+							<img src="../../img/tcp_img1.PNG" width="100%">
+						</td>
+					</tr>
+				</table>
+				<hr style="width: 30%;">
+				<h2 class="druhy">Funkcie UDP</h2>
+				<p class="article_text">Protokol UDP (User Datagram Protocol) je považovaný za najlepší transportný protokol. UDP je ľahký prenosový protokol, ktorý ponúka rovnakú segmentáciu a zostavenie údajov ako TCP, ale bez spoľahlivosti TCP a riadenia toku. UDP je taký jednoduchý protokol, že je zvyčajne opísaný z hľadiska toho, čo nerobí v porovnaní s TCP.</p>
+				<hr style="width: 30%;">
+				<h2 class="druhy">Hlavička UDP</h2>
+				<p class="article_text">
+					UDP je protokol bezstavový protokol, čo znamená, že klient ani server nie sú povinní sledovať stav komunikačnej relácie. Ak sa pri používaní protokolu UDP ako prenosového protokolu vyžaduje spoľahlivosť, musí sa s ňou zaobchádzať v aplikácii. Jednou z najdôležitejších požiadaviek na poskytovanie živého videa a hlasu v sieti je to, že údaje naďalej rýchlo prúdia. Živé video a hlasové aplikácie môžu tolerovať stratu dát s minimálnym alebo žiadnym viditeľným efektom a sú dokonale vhodné pre UDP. Časti komunikácie v UDP sa nazývajú datagramy, ako je to znázornené na obrázku. Tieto datagramy sa odosielajú ako protokol najvyššej úrovne v protokole transportnej vrstvy. UDP má nízku réžiu 8 bajtov.
+				</p>
+				<img src="../../img/udp_img1.PNG" width="40%">
+			</div>
+			<hr>
+			<a data-toggle="collapse" href="#portnums" class="zobrazenie viewMore">
+				<h2 class="druhy">Portové čísla</h2> <span class="glyphicon glyphicon-plus"></span>
+			</a>
+			<div id="portnums" class="collapse">
+				<p class="article_text">
+					Transportná vrstva musí byť schopná oddeliť a spravovať viacnásobnú komunikáciu s rôznymi požiadavkami na prepravu. Používatelia očakávajú, že budú môcť súčasne prijímať a odosielať e-mailové správy, prezerať webové stránky a uskutočňovať telefonický hovor VoIP. Každá z týchto aplikácií odosiela a prijíma údaje cez sieť súčasne, napriek odlišným požiadavkám na spoľahlivosť. Dáta z telefonického hovoru navyše nie sú smerované do webového prehľadávača a text z okamžitej správy sa v e-maile neobjaví. TCP a UDP spravujú tieto viacnásobné simultánne konverzácie pomocou polí záhlavia, ktoré môžu tieto aplikácie jednoznačne identifikovať. Tieto jedinečné identifikátory sú čísla portov.
+				</p>
+				<img src="../../img/transport_img6.PNG" width="40%">
+				<hr style="width: 30%;">
+				<h2 class="druhy">Portové čísla</h2>
+				<p class="article_text">
+					Číslo zdrojového portu je spojené s pôvodnou aplikáciou na lokálnom hostiteľovi. Číslo cieľového portu je priradené k cieľovej aplikácii na vzdialenom hostiteľovi.
+					<strong class="zvyraznenie">Zdrojový port</strong> - Číslo zdrojového portu je dynamicky generované odosielajúcim zariadením na identifikáciu konverzácie medzi dvoma zariadeniami. <br> Tento proces umožňuje viac konverzácií súčasne. Je bežné, že zariadenie odosiela na webový server súčasne viac žiadostí o službu HTTP. Každá samostatná konverzácia HTTP sa sleduje na základe zdrojových portov. <br>
+					<strong class="zvyraznenie">Cieľový port</strong> - Klient umiestni do segmentu číslo cieľového portu, aby informoval cieľový server o požadovanú službu, ako je to znázornené na obrázku. Napríklad, keď klient špecifikuje port 80 v cieľovom porte, server, ktorý prijme správu, vie, že sa požadujú webové služby. Server môže ponúkať súčasne viac ako jednu službu, napríklad webové služby na porte 80 súčasne s tým, že ponúka zriadenie pripojenia na prenos súborov (FTP) na porte 21.
+
+				</p>
+				<img src="../../img/transport_img7.PNG" width="40%">
+				<hr style="width: 30%;">
+				<h2 class="druhy">Párovanie socketov</h2>
+				<p class="article_text">
+					Zdrojový a cieľový port je umiestnený v segmente. Segmenty sa potom zapuzdria do paketu IP. Paket IP obsahuje adresu IP zdroja a cieľa. Kombinácia zdrojovej adresy IP a čísla zdrojového portu alebo cieľovej adresy IP a čísla cieľového portu sa nazýva socket. <br> Soket sa používa na identifikáciu servera a služby, ktorú požaduje klient. Klientsky socket môže vyzerať takto: 1099 predstavuje číslo zdrojového portu: 192.168.1.5:1099 . Soket na webovom serveri môže byť: 192.168.1.7:80 . <br> Spolu sa tieto dve sockety spoja do jedného páru soketov: 192.168.1.5:1099, 192.168.1.7:80 . <br> Sockety umožňujú rozlíšiť viacero procesov, ktoré bežia na klientovi, a navzájom odlíšiť viac pripojení k serveru. Číslo zdrojového portu slúži ako spiatočná adresa žiadajúcej aplikácie. Transportná vrstva sleduje tento port a aplikáciu, ktorá iniciovala požiadavku, aby sa po vrátení odpovede mohla poslať do správnej aplikácie.
+				</p>
+				<img src="../../img/transport_img8.PNG" width="40%">
+				<hr style="width: 30%;">
+				<h2 class="druhy">Skupiny portových čísiel</h2>n
+				<p class="article_text">
+					Úrad pre internetové pridelené čísla (IANA) je orgán pre normalizáciu zodpovedný za prideľovanie rôznych štandardov adresovania vrátane čísel portov. Existujú rôzne typy čísel portov:
+					<ul class="moje_ul1">
+						<li><strong class="zvyraznenie">Známe porty (čísla 0 až 1023)</strong> - tieto čísla sú vyhradené pre služby a aplikácie. Bežne sa používajú pre aplikácie, ako sú webové prehliadače, e-mailoví klienti a klienti vzdialeného prístupu. Definovaním týchto dobre známych portov pre serverové aplikácie môžu byť klientske aplikácie naprogramované tak, aby vyžadovali pripojenie k tomuto špecifickému portu a súvisiacej službe.</li>
+						<li><strong class="zvyraznenie">Registrované porty (čísla 1024 až 49151)</strong> - Tieto čísla portov prideľuje IANA žiadajúcej entite na použitie v konkrétnych procesoch alebo aplikáciách. Tieto procesy sú primárne individuálne aplikácie, ktoré si užívateľ vybral na inštaláciu, a nie bežné aplikácie, ktoré by dostali známe číslo portu. Napríklad, spoločnosť Cisco zaregistrovala port 1985 pre svoj proces HSRP (Hot Standby Routing Protocol).</li>
+						<li><strong class="zvyraznenie">Dynamické alebo súkromné ​​porty (čísla 49152 až 65535)</strong> - zvyčajne sú dynamicky priraďované operačným systémom klienta pri začatí pripojenia k službe. Dynamický port sa potom používa na identifikáciu klientskej aplikácie počas komunikácie.</li>
+					</ul>
+				</p>
+				<hr style="width: 30%;">
+				<h2 class="druhy">Príkaz netstat</h2>
+				<p class="article_text">
+					Nevysvetlené pripojenia TCP môžu predstavovať veľkú bezpečnostnú hrozbu. Môžu naznačovať, že niečo alebo niekto je pripojený k miestnemu hostiteľovi. Niekedy je potrebné vedieť, ktoré aktívne spojenia TCP sú otvorené a fungujú na sieťovom hostiteľovi. Netstat je dôležitý sieťový príkaz, ktorý možno použiť na overenie týchto pripojení. <br>
+					Ako je znázornené na obrázku, po zadaní príkazu netstat, sa zobrazí zoznam používaných protokolov, miestna adresa a čísla portov, cudzia adresa a čísla portov a stav pripojenia. <br>
+					Príkaz netstat sa predvolene pokúsi rozlíšiť adresy IP na názvy domén a čísla portov na dobre známe aplikácie. Nestat -n možno použiť na zobrazenie IP adries a čísel portov v ich číselnej podobe. 
+				</p>	
+				<img src="../../img/netstat_img1.PNG" width="40%">
+			</div> <hr>
+			<a data-toggle="collapse" href="#tcpdals" class="zobrazenie viewMore">
+				<h2 class="druhy">Ďalšie veci súvisiace s TCP</h2> <span class="glyphicon glyphicon-plus"></span>
+			</a>
+			<div id="tcpdals" class="collapse">
+				<hr style="width: 30%;">
+				<h2 class="druhy">Nadviazanie TCP spojenia</h2>
+				<p class="article_text">
+					TCP spojenie sa vytvorí v troch krokoch: <br>
+					<ul class="moje_ul1">
+						<li>Krok 1 - Iniciujúci klient požaduje komunikačnú reláciu klient-server so serverom. </li>
+						<li>Krok 2 - Server potvrdí komunikačnú reláciu klient-server a požiada komunikačnú reláciu server-klient. </li>
+						<li>Krok 3 - Iniciujúci klient potvrdzuje server-to-relácia komunikácie klienta. </li>
+					</ul>
+				</p>
+				<hr style="width: 30%;">
+				<h2 class="druhy">Prerušenie TCP spojenia</h2>
+				<p class="article_text">
+					Ak chcete spojenie uzavrieť, musí sa v záhlaví segmentu nastaviť príznak Finish (FIN). Na ukončenie každej jednosmernej relácie TCP sa používa obojsmerné "podanie ruky", ktoré pozostáva zo segmentu FIN a segmentu Acknowledgement (ACK). Preto na ukončenie jednej konverzácie podporovanej TCP sú potrebné štyri výmeny na ukončenie oboch relácií.
+					<ul class="moje_ul1">
+						<li>Krok 1 - Ak klient nemá v streame ďalšie údaje na odoslanie, vyšle segment s nastaveným príznakom FIN.</li>
+						<li>Krok 2 - Server pošle ACK na potvrdenie prijatia FIN, aby sa relácia ukončila z klienta na server.</li>
+						<li>Krok 3 - Server odošle klientovi FIN na ukončenie relácie server-client.</li>
+						<li>Krok 4 - Klient odpovie ACK na potvrdenie FIN zo servera.</li>
+					</ul>
+				</p>
+				<hr style="width: 30%;">
+				<h2 class="druhy">TCP three-way handshake</h2>		
+				<p class="article_text">
+					Hostitelia sledujú každý segment údajov v rámci relácie a vymieňajú si informácie o tom, aké údaje sa prijímajú pomocou informácií v záhlaví TCP. TCP je plne duplexný protokol, kde každé spojenie predstavuje dva jednosmerné komunikačné toky alebo relácie. Na nadviazanie spojenia hostitelia vykonajú three-way handshage. Kontrolné bity v hlavičke TCP označujú priebeh a stav pripojenia.
+				</p>
+				<p class="article_text">
+					<strong class="zvyraznenie">Three-way handshake:</strong>
+					<ul class="moje_ul1">
+						<li>Zistí sa, že cieľové zariadenie je v sieti</li>
+						<li>Overuje sa, či má cieľové zariadenie aktívnu službu a prijíma požiadavky na číslo cieľového portu, ktoré má iniciujúci klient v úmysle použiť</li>
+						<li>Informuje cieľové zariadenie, že zdrojový klient plánuje nadviazať komunikačné spojenie na tomto čísle portu</li>
+					</ul>
+				</p>		
+				<p class="article_text">
+					<strong class="zvyraznenie">Kontrolné bity(6 bitov) v hlavičke sú:</strong>
+					<ul class="moje_ul1">
+						<li>URG - Pole ukazovateľa urgentnosti</li>
+						<li>ACK - Acknowledgement</li>
+						<li>PSH - Push function</li>
+						<li>RST - Resetnúť pripojenie</li>
+						<li>SYN - Synchronizovať poradové čísla</li>
+						<li>FIN - Žiadne ďaľšie dáta od odosielateľa</li>
+					</ul>
+				</p>
+				<hr style="width: 30%;">
+				<h2 class="druhy">Spoľahlivosť TCP</h2>	
+				<p class="article_text">
+					Segmenty TCP môžu prísť na miesto určenia v nesprávnom poradí, a preto sa tieto segmenty musia zoradiť do správneho poradia. Na dosiahnutie tohto cieľa sú v záhlaví každého paketu priradené poradové čísla.
+					Poradové číslo predstavuje prvý dátový bajt segmentu TCP. <br> Počas nastavovania relácie sa nastavuje počiatočné poradové číslo. Toto číslo predstavuje počiatočnú hodnotu bajtov pre túto reláciu, ktorá sa prenáša do prijímajúcej aplikácie. Keďže sa údaje prenášajú počas relácie, poradové číslo sa zvyšuje o počet bajtov, ktoré boli prenesené. Toto sledovanie bajtov údajov umožňuje jednoznačne identifikovať a potvrdiť každý segment. Chýbajúce segmenty sa potom dajú identifikovať.
+				</p>
+				<p class="article_text">
+					Poznámka: ISN nezačína na čísle jedna, ale je to v skutočnosti náhodné číslo. Tým sa má zabrániť určitým typom škodlivých útokov.
+				</p>
+				<hr style="width: 30%;">
+				<h2 class="druhy">TCP Flow Control (Riadenie toku dát) - Window size a acknowledgements(potvrdenia)</h2>
+				<p class="article_text">
+					TCP tiež poskytuje mechanizmy na Flow Control, čož predstavuje množstvo údajov, ktoré môže cieľ prijať a spoľahlivo spracovať. Flow Control pomáha udržiavať spoľahlivosť prenosu TCP úpravou rýchlosti toku údajov medzi zdrojom a cieľom pre danú reláciu. Na dosiahnutie toho, hlavička TCP obsahuje 16-bitové pole nazvané veľkosť okna. <br>
+					Obrázok ukazuje príklad veľkosti okna a potvrdenia. Veľkosť okna je počet bajtov, ktoré môže cieľové zariadenie relácie TCP prijať a spracovať naraz. V tomto príklade je počiatočná veľkosť okna PC B pre reláciu TCP 10 000 bajtov. Počnúc prvým bajtom, bajtom číslo 1, posledný bajtový počítač A, ktorý môže odoslať bez prijatia potvrdenia ACK(Acknowledgement), je bajt 10 000. Toto je známe ako okno odoslania PC A. Veľkosť okna je zahrnutá v každom segmente TCP, takže cieľ môže kedykoľvek zmeniť veľkosť okna v závislosti od dostupnosti vyrovnávacej pamäte.
+				</p>
+				<img src="../../img/transport_img9.PNG" width="45%">
+				<p class="article_text">
+					Na obrázku zdroj vysiela 1,460 bajtov údajov v každom segmente TCP. Toto je známe ako MSS (maximálna veľkosť segmentu).
+					Počiatočná Window size je dohodnutá, keď je relácia TCP vytvorená počas three-way handshake-u. Zdrojové zariadenie musí obmedziť počet bajtov odoslaných do cieľového zariadenia na základe vwindow size cieľa. Až potom, čo zdrojové zariadenie dostane potvrdenie o prijatí bajtov, môže pokračovať v odosielaní ďalších údajov na reláciu. Keď sú bajty prijímané a spracovávané, cieľové miesto pošle potvrdenia informujúce zdroj, že môže pokračovať v odosielaní ďalších bajtov. <br>
+					PC B zvyčajne nebude čakať, kým nedostane všetkých 10 000 bajtov pred odoslaním ACK. To znamená, že počítač A môže upravovať svoj window size na odosielanie, keď prijíma ACK z počítača B. Ako je znázornené na obrázku, keď PC A dostane ACK s potvrdzovacím číslom 2 921, windows size PC A sa zvýši o ďalších 10 000 bajtov (veľkosť aktuálnej veľkosti okna B na 12 920). PC A môže teraz pokračovať v posielaní ďalších 10 000 bajtov do PC B, pokiaľ neodošle svoje nové okno na odoslanie 12 920. Proces potvrdenia o odoslaní cieľa, keď spracúva prijaté bajty a nepretržitá úprava window size-u odosielania zdroja, sa nazýva sliding windows(posúvajúce sa okná). <br>	
+					Ak sa dostupnosť medzipamäte miesta určenia zníži, môže znížiť svoju windows size a informovať zdroj, aby znížil počet bajtov, ktoré by mal poslať bez prijatia potvrdenia. <br>
+				</p>		
+				<hr>	
+				<h2 class="druhy">TCP Flow Control - Vyhýbanie sa preťaženiu</h2>	
+				<p class="article_text">
+					Ak dôjde k preťaženiu v sieti, paket je vyradený routrom. Keď pakety obsahujúce segmenty TCP nedosiahnu svoj cieľ, zostanú nepotvrdené. Stanovenou rýchlosťou, ktorou sa odosielajú segmenty TCP, ale nepotvrdzujú, môže zdroj predpokladať určitú úroveň preťaženia siete.
+				</p>
+				<p class="article_text">
+					Kedykoľvek, keď dôjde k preťaženiu, dôjde k opakovanému prenosu stratených segmentov TCP zo zdroja. Ak opakovaný prenos nie je správne riadený, ďalšie opakované vysielanie segmentov TCP môže spôsobiť ešte horšie preťaženie. Do siete sa zavádzajú nielen nové pakety so segmentmi TCP, ale k preťaženiu sa pridá aj spätná väzba stratených opakovaných segmentov TCP. Aby sa predišlo preťaženiu a riadilo sa, TCP používa niekoľko mechanizmov na riadenie preťaženia, sú to časovače a algoritmy.
+				</p>
+				<p class="article_text">
+					Ak zdroj zistí, že segmenty TCP buď nie sú potvrdené vôbec alebo niesú potvrdené včas, potom môže znížiť počet bajtov, ktoré vyšle pred prijatím potvrdenia. Všimnite si, že je to zdroj, ktorý redukuje počet nepotvrdených bajtov, ktoré odosiela, a nie window size určená cieľom.
+				</p>
+				<img src="../../img/transport_img10.PNG" width="40%">
+			</div>
+			<hr>
+			<a data-toggle="collapse" href="#udpdals" class="zobrazenie viewMore">
+				<h2 class="druhy">Ďalšie info o UDP</h2> <span class="glyphicon glyphicon-plus"></span>
+			</a>
+			<div id="udpdals" class="collapse">
+				<p class="article_text">
+					UDP je jednoduchý protokol, ktorý poskytuje základné funkcie transportnej vrstvy. Má oveľa nižšie režijné náklady ako TCP, pretože nie je zameraný na pripojenie a neponúka sofistikované mechanizmy opakovaného prenosu segmentov ktoré sa nedoručili, sekvencovania a riadenia toku, ktoré poskytujú spoľahlivosť. To neznamená, že aplikácie, ktoré používajú UDP, sú vždy nespoľahlivé, a ani to neznamená, že UDP je podradný protokol. Znamená to jednoducho, že tieto funkcie nie sú poskytované protokolom transportnej vrstvy a musia sa podľa potreby implementovať inde.
+				</p>
+				<p class="article_text">
+					Nízka réžia UDP je veľmi žiaduca pre protokoly, ktoré uskutočňujú jednoduché transakcie so žiadosťami a odpoveďami. Napríklad, Použitie protokolu TCP pre DHCP by predstavovalo zbytočnú sieťovú prevádzku. Ak sa vyskytne problém so žiadosťou alebo odpoveďou, zariadenie jednoducho odošle žiadosť znova, ak nedostane žiadnu odpoveď. <br> Protokol UDP nevytvára pripojenie predtým, než odošle dáta.
+				</p>
+				<hr style="width: 30%;">
+				<h2 class="druhy">UDP - Zoradenie datagramov do správneho poradia</h2>
+				<p class="article_text">
+					Keď sa datagramy UDP odosielajú do cieľa, často prechádzajú rôznymi cestami a prichádzajú v nesprávnom poradí. UDP nesleduje poradové čísla tak, ako to robí TCP. UDP nemá žiadny spôsob, ako usporiadať datagramy do ich správneho poradia, ako je to znázornené na obrázku. <br> Z tohto dôvodu UDP údaje jednoducho zostaví v poradí, v akom boli prijaté, a pošle ich do aplikácie. Ak je poradie údajov pre aplikáciu dôležitá, musí aplikácia určiť správne poradie datagramov a určiť, ako by sa mali údaje spracovať.
+				</p>
+				<img src="../../img/transport_img11.PNG" width="40%">
+				<hr style="width: 30%;">
+				<h2 class="druhy">Proces a požiadavky servera UDP</h2>
+				<p class="article_text">
+					Podobne ako aplikácie založené na TCP, serverovým aplikáciám založeným na UDP sa priraďujú známe alebo registrované čísla portov, ako je to znázornené na obrázku. Ak sú tieto aplikácie alebo procesy spustené na serveri, akceptujú údaje priradené k priradenému portovému číslu. <br> Keď UDP prijme datagram určený pre jeden z týchto portov, odošle aplikačné údaje do príslušnej aplikácie na základe svojho portového čísla.
+				</p>
+				<img src="../../img/udp_img2.PNG" width="40%">
+				<p class="article_text">
+				Poznámka: Server služby Remote Authentication Dial-in User Service (RADIUS) zobrazený na obrázku poskytuje autentifikačné, autorizačné a účtovnícke služby na správu prístupu užívateľov. Službou RADIUS sa v tomto kurze nebudeme zaoberať.
+				</p>
+				<hr style="width: 30%;">
+				<h2 class="druhy">UDP Klientske procesy</h2>
+				<p class="article_text">
+					Rovnako ako v prípade TCP, komunikácia medzi klientom a serverom je iniciovaná klientskou aplikáciou, ktorá požaduje údaje zo serverového procesu. Proces klienta UDP dynamicky vyberie číslo portu z rozsahu čísel portov a použije ho ako zdrojový port pre konverzáciu. Cieľový port je zvyčajne "well-known" alebo registrované číslo portu priradené procesu servera. Keď si klient vyberie zdrojový a cieľový port, použije sa rovnaký pár portov v hlavičke všetkých datagramov použitých v transakcii. Pre údaje vracané klientovi zo servera sa čísla zdrojového a cieľového portu v hlavičke datagramu obrátia.
+				</p>
+			</div>
+			<hr>
+			<a data-toggle="collapse" href="#ktorepouz" class="zobrazenie viewMore">
+				<h2 class="druhy">Použiť TCP alebo UDP ?</h2> <span class="glyphicon glyphicon-plus"></span>
+			</a>
+			<div id="ktorepouz" class="collapse">
+				<ol class="moje_ol1">
+					<h2 class="druhy"><li>Aplikácie používajúce TCP</li></h2>
+					<p class="article_text">
+						TCP je vynikajúcim príkladom toho, ako rôzne vrstvy sady protokolov TCP / IP majú špecifické úlohy. TCP spracováva všetky úlohy spojené s rozdelením toku údajov na segmenty, poskytuje spoľahlivosť, riadi tok údajov a zoraďuje segmenty. TCP oslobodzuje aplikáciu od nutnosti riadiť ktorúkoľvek z týchto úloh. Aplikácie, rovnako ako tie, ktoré sú zobrazené na obrázku, môžu jednoducho poslať dátový tok do transportnej vrstvy a využívať služby TCP.
+					</p>
+					<img src="../../img/tcp_img2.PNG" width="40%">
+					<h2 class="druhy"><li>Aplikácie používajúce UDP</li></h2>
+					<p class="article_text" >
+						Existujú tri typy aplikácií, ktoré sú pre UDP najvhodnejšie:
+						<ul class="moje_ul1">
+							<li>Živé video a multimediálne aplikácie - môžu tolerovať stratu dát, ale vyžadujú len malé alebo žiadne oneskorenie. Medzi príklady patrí VoIP a live-stream videa.</li>
+							<li>Apliácie s jeddnoduchými žiadosťami a odpoveďami - Aplikácie s jednoduchými transakciami, pri ktorých hostiteľ pošle žiadosť a môže alebo nemusí dostať odpoveď. Príklady zahŕňajú DNS a DHCP.</li>
+							<li>Aplikácie, ktoré majú vlastné služby na zaobstaranie spoľahlivosti - Jednosmerná komunikácia, pri ktorej sa riadenie toku, zisťovanie chýb, potvrdenia a obnova chýb nevyžadujú alebo ich zahŕňa samotná aplikácia. Napríklad SNMP a TFTP.</li>
+						</ul>
+					</p>
+					<p class="article_text">Aj keď DNS a SNMP štandardne používajú protokol UDP, oba môžu používať aj protokol TCP. DNS použije TCP, ak je požiadavka DNS alebo odpoveď DNS viac ako 512 bajtov. Podobne v niektorých situáciách môže správca siete chcieť nakonfigurovať SNMP tak, aby používal TCP.</p>
+					<img src="../../img/udp_img3.PNG" width="40%">
+				</ol>
+			</div>
+
+
+
+			<hr style="width: 100%;">
+			<!-- Spodný navbar s logom -->
+			<table class="navigacia" style="margin-top: -80px;">
+				<tr>
+					<td class="navigacia">
+						<a href="ccna1_8.php" class="btn btn-info btn-lg naspat">
+	       				<span class="glyphicon glyphicon-menu-left"></span> Podsieťovanie
+	       				</a>
+					</td>
+					<td class="navigacia" style="width: 20%"></td>
+						<a href="../../index.php">
+							<img src="../../img/logostranky.PNG" class="moje_logofooter">
+						</a>
+					<td class="navigacia">
+						<a href="ccna1_10.php" class="btn btn-info btn-lg dopredu"> 
+	     			  Application Layer (Aplikačná vrstva) <span class="glyphicon glyphicon-menu-right"></span> 
+	     			  	</a>	
+					</td>
+				</tr>
+			</table>
+		</div>
+	</article>
+
+
+
+
+
+	<footer class="moj_footer">
+		
+	</footer>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+Nastavenie a kontrola hesla do privilegovaného módu:
+
+Sw-Floor-1(config)# enable secret [heslo]
+Sw-Floor-1(config)# exit
+Sw-Floor-1#
+Sw-Floor-1# disable
+Sw-Floor-1> enable
+Password:
+Sw-Floor-1#
+
+
+Nastavenie hesla do používateľského módu
+
+Sw-Floor-1(config)# line console 0
+Sw-Floor-1(config-line)# password [heslo]
+Sw-Floor-1(config-line)# login
+Sw-Floor-1(config-line)# exit
+Sw-Floor-1(config)#
+
+
+Nastavenie hesla pre vzdialený prístup
+
+Sw-Floor-1(config)# line vty [rozsah od do]
+Sw-Floor-1(config-line)# password [heslo]
+Sw-Floor-1(config-line)# login
+Sw-Floor-1(config-line)#
+
+
+Šifrovanie hesiel
+
+S1# config t
+S1(config)# service password-encryption
+S1(config)# exit

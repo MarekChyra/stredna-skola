@@ -1,0 +1,40 @@
+*{
+    /*plati pre vsetky elementy na stranke*/
+    font-family: "Comic sans ms";
+    font-size: 12pt;
+    color: blue;
+}
+p{
+    /*iba pre p*/
+    color: deeppink;
+    text-align: center;
+    padding: 5px;
+}
+a{
+    /*odkazy*/
+    color: darksalmon;
+    text-decoration: none;
+    font-weight: bold;
+}
+#pozadie{
+    background-color: tomato;
+    color: hotpink;
+}
+.he{
+    color: blueviolet;
+    text-shadow: 12px;
+}
+.hehe{
+    color: yellowgreen;
+    background-color: black;
+}
+.hehehe{
+    color: gold;
+}
+ul{
+    list-style-type: square;
+    list-style-position: outside;
+}
+ol{
+    list-style-type: upper-alpha;
+}

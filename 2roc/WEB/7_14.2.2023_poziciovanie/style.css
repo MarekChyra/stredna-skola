@@ -1,0 +1,16 @@
+.posun {
+    position: sticky;
+    top: 50px;
+    left: 50px;
+    z-index: -1;
+}
+
+a {
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+}
+a:hover {
+    position: relative;
+    top: 5px;
+}

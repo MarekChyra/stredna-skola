@@ -1,0 +1,11 @@
+div{
+    background-color: lightgray;
+    width: 300px;
+    border: 15px groove green;
+    padding: 50px;
+    margin: 20px;
+    border-radius: 10px;
+}
+h2{
+    border-bottom: 2px solid red;
+}

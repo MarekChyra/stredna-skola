@@ -1,0 +1,24 @@
+V tejto aktivite nakonfigurujete statické a predvolené trasy. Statická trasa je trasa, ktorú manuálne zadáva správca siete, aby vytvoril spoľahlivú a bezpečnú trasu. V tejto aktivite sa používajú štyri rôzne statické trasy:
+rekurzívna statická trasa,
+priamo pripojená statická trasa,
+úplne špecifikovaná statická trasa a predvolená trasa.
+Otázky:
+a. Keď sa pozriete na diagram topológie, koľko sietí je celkovo?
+b. Koľko sietí je priamo pripojených k R1, R2 a R3?
+c. Koľko statických trás vyžaduje každý smerovač, aby dosiahol siete, ktoré nie sú priamo pripojené? d. Otestujte konektivitu k R2 a R3 LAN pingom PC2 a PC3 z PC1. Prečo ste boli neúspešní?
+Nakonfigurujte rekurzívne statické trasy na R1.
+a. Čo je rekurzívna statická cesta?
+b. Prečo rekurzívna statická cesta vyžaduje dve vyhľadávania v smerovacej tabuľke?
+c. Nakonfigurujte rekurzívnu statickú cestu do každej siete, ktorá nie je priamo pripojená k R1, vrátane WAN prepojenia medzi R2 a R3.
+d. Otestujte konektivitu k R2 LAN a pingujte IP adresy PC2 a PC3.
+Prečo ste neuspeli? Nakonfigurujte priamo pripojené statické trasy na R2.
+a. Ako sa priamo pripojená statická cesta líši od rekurzívnej statickej cesty? Nakonfigurujte priamo pripojenú statickú trasu z R2 do každej siete, ktorá nie je priamo pripojená.
+b. Ktorý príkaz zobrazí iba priamo pripojené siete?
+c. Ktorý príkaz zobrazí iba statické trasy uvedené v smerovacej tabuľke?
+d. Ako môžete pri zobrazení celej smerovacej tabuľky rozlíšiť medzi priamo pripojenou statickou cestou a priamo pripojenou sieťou?
+Nakonfigurujte predvolenú trasu na R3.
+a. Ako sa predvolená trasa líši od bežnej statickej trasy? Nakonfigurujte predvolenú trasu na R3 tak, aby bola dosiahnuteľná každá sieť, ktorá nie je priamo pripojená.
+b. Ako sa zobrazuje statická trasa v smerovacej tabuľke?
+Overte konfigurácie statickej trasy. Na overenie správnych konfigurácií použite príslušné príkazy show. Ktoré príkazy show môžete použiť na overenie, či sú správne nakonfigurované statické trasy?
+Overenie pripojenia
+Každé zariadenie by teraz malo byť schopné pingovať všetky ostatné zariadenia. Ak nie, skontrolujte svoje statické a predvolené konfigurácie trasy.

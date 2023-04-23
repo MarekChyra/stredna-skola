@@ -1,0 +1,41 @@
+﻿Čo je rádioaktivita
+	Schopnosť atómových jadier samovoľne vysielať žiarenie
+Na aké zložky rozdeľujeme radionuklidy
+	α
+β-
+β+
+γ
+Čo sú radionuklidy
+	je atóm, ktorého jadro sa samovoľne premieňa za vysielania vysoko energetického žiarenia
+Aké majú využitie radionuklidy v praxi
+	Zisťovanie skrytých chýb materiálov
+	Bezdotykové meranie hrúbky papiera, plechu
+	Zmena vlastnosti látky pri ožiarení
+	Teplo produkované radionuklidmy
+	Jadrové hodiny
+Kto vyslovil ako prvý definíciu atómu
+	Leukippos z Milétu
+Démokritos z Abdér
+Definícia pudingového modelu atómu
+Atóm je guľa s rovnomerne rozloženým kladným nábojom, v ktorej sú voľne 	rozmiestnené elektróny
+Rutherfordov model atómu
+Elektróny sa pohybujú okolo kladného jadra po eliptických dráhach (ako planéty SS) vo 	vrstve, ktorá sa nazýva elektronový obal
+1. Bórov postulát
+	Atóm sa môže nachádzať len v istých kvantových stavoch.
+Každý kvantový stav má presne určenú hodnotu energie.
+2. Bórov postulát
+	Pri prechode atómu zo stavu s energiou En do stavu s nižšou energiou Em vysiela atóm žiarenie s frekvenciou fnm ...
+Čo je elektrón
+Je elementárna častica v obale atómu s jednotkovým záporným nábojom
+Akú hodnotu má elektrón
+	
+Čo je protón
+	subatomárna častica v jadre atómu
+Čo je neutrón
+	subatomárna častica v jadre atómu s neutrálnym nábojom, nestabilná
+Čo je orbitál
+priestor, v ktorom sa vyskytuje elektrón v atóme
+Čo je elektronová konfigurácia
+	rozmiestnenie elektrónov atómu, molekuly alebo inej fyzickej štruktúry 	v atómovom alebo molekulovom orbitáli
+Čo je valenčná vrstva
+	je posledná vrstva elektrónového obalu atómu

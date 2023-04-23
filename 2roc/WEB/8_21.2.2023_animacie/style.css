@@ -1,0 +1,31 @@
+/* vytvorte animaciu s nazvom inverzia, 
+v aktualnom style bude farma pozzdia modra a farma pisma zlta,
+v novom style farba pozadia zlta a farba pisma modra */
+
+@keyframes inverzia {
+    from {background-color: blue; color: yellow;}
+    to {background-color: yellow; color: blue;}
+}
+
+h2 {
+    background-color: blue;
+    color: yellow;
+    text-align: center;
+    animation-name: inverzia;
+    animation-duration: 6s;
+}
+
+@keyframes semafor {
+    0% {background-color: black;}
+    25% {background-color: red;}
+    50% {background-color: orange;}
+    100% {background-color: green;}
+}
+
+div {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: black;
+    animation: semafor 10s linear 3s infinite normal;
+}
