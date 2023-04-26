@@ -1,0 +1,24 @@
+body {
+  background-color: black;
+}
+
+.hehe1 {
+  background-color: #00ffd5;
+  color: #e5ff00;
+  font-size: 69px;
+  font-family: "Comic sans MS";
+}
+
+.hehe2 {
+  background-color: #3a6896;
+  color: #ff8000;
+  font-size: 25px;
+  font-family: "Verdana";
+}
+
+.hehe3 {
+  background-color: #1eff00;
+  color: #ff0000;
+  font-size: 50px;
+  font-family: "Arial";
+}/*# sourceMappingURL=global.css.map */

@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+* body {
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+* body .card {
+  height: 300px;
+  width: 300px;
+  background-color: chocolate;
+}
+@media (min-width: 320px) {
+  * body .card {
+    background-color: orange;
+  }
+}
+@media (min-width: 900px) {
+  * body .card {
+    background-color: blue;
+  }
+}
+@media (min-width: 1400px) {
+  * body .card {
+    background-color: green;
+  }
+}/*# sourceMappingURL=style.css.map */

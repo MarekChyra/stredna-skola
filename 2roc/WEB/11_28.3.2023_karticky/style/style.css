@@ -1,0 +1,56 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+* body {
+  display: grid;
+  align-content: center;
+  height: 100vh;
+}
+* body .container {
+  background-color: rgb(150, 200, 10);
+  display: grid;
+  padding: 30px;
+  align-content: center;
+  justify-content: stretch;
+  grid-template-columns: repeat(1, auto);
+  gap: 30px;
+}
+@media (min-width: 320px) {
+  * body .container {
+    grid-template-columns: repeat(1, auto);
+  }
+}
+@media (min-width: 800px) {
+  * body .container {
+    grid-template-columns: repeat(2, auto);
+  }
+}
+@media (min-width: 1200px) {
+  * body .container {
+    grid-template-columns: repeat(3, auto);
+  }
+}
+* body .container .card {
+  background-color: rgba(0, 0, 0, 0.3);
+  text-align: center;
+  border-radius: 15px;
+  padding: 5px;
+  transition: 1s;
+}
+* body .container .card a {
+  color: white;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: 1s;
+  padding: 5px 10xp;
+  display: inline-block;
+}
+* body .container .card a:hover {
+  color: black;
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: 1s;
+}
+* body .container .card:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}/*# sourceMappingURL=style.css.map */

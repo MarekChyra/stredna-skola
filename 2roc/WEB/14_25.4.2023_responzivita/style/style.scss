@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+
+    body{
+        height: 100vh;
+        display: grid;
+        justify-content: center;
+        align-content: center;
+
+        .card{
+            height: 300px;
+            width: 300px;
+            background-color: chocolate;
+            @media(min-width: 320px) {
+                background-color: orange;
+            }
+            @media(min-width: 900px) {
+                background-color: blue;
+            }
+            @media(min-width: 1400px) {
+                background-color: green;
+            }
+        }
+    }
+}

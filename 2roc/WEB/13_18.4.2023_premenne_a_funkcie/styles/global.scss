@@ -1,0 +1,26 @@
+$color1: #dead69;
+$color2: #69dead;
+$velkost-pisma: 69px;
+
+@mixin funkcia($color1: #00ffd5, $color2: #e5ff00, $velkost-pisma: 69px, $font: 'Comic sans MS') {
+    background-color: $color1;
+    color: $color2;
+    font-size: $velkost-pisma;
+    font-family: $font;
+}
+
+body{
+    background-color: black;
+}
+
+.hehe1{
+    @include funkcia()
+}
+
+.hehe2{
+    @include funkcia($color1: #3a6896, $color2: #ff8000, $velkost-pisma: 25px, $font: 'Verdana')
+}
+
+.hehe3{
+    @include funkcia($color1: #1eff00, $color2: #ff0000, $velkost-pisma: 50px, $font: 'Arial')
+}
