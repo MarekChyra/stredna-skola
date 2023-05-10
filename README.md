@@ -1,5 +1,5 @@
 # LICENSE (summary)
-![](https://grabify.link/KAXWJ2)
+![](https://creativecommons.org/images/deed/cc_icon_white_x2.png)
 ![](https://creativecommons.org/images/deed/attribution_icon_white_x2.png)
 ![](https://creativecommons.org/images/deed/nc_white_x2.png)
 ![](https://creativecommons.org/images/deed/nd_white_x2.png)
