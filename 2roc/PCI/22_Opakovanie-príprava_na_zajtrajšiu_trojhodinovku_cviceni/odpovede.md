@@ -26,7 +26,7 @@
     - Zraniteľnosti softvéru
         - chyby v softvérových aplikáciách, ktoré môžu byť zneužité útočnikom
         - aktualizácia softvéru, penetračné testovanie
-<br>
+
 -  Obmedziť prístup k zariadeniu a uloženie aktuálnej konfigurácie použitím príkazov v CISCO IOS:
     - privilegovaný prístup:
         - enable secret <heslo>
@@ -47,7 +47,7 @@
     - WAN
         - pomocou verejných IP adries (adresa routra)
         - musí ísť cez default gateway
-<br>
+
 -  Nakresliť a porovnať ISO OSI a TCP/IP modely sietí:
     - ISO OSI
         - Fyzická vrstva (L1)
@@ -81,7 +81,7 @@
             - prístup k sieťovým službám
             - HTTP, FTP, DNS, SMTP
 - Popísať procesy prebiehajúce na jednotlivých vrstvách modelov ISO OSI a TCP/IP
-<br>
+
 -  Definovať funkciu protokolov: HTTP, DNS, FTP, POP, SMTP, IMAP, TELNET
     - HTTP
         - web stránky
