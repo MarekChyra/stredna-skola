@@ -1,56 +1,31 @@
+#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
 
-/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+void dis(float a, float b, float c) {
+  float dis = (b * b) - 4 * a * c;
 
-void korent() {
-	printf("Rovnica nema riesenie.");
+  if (dis < 0) {
+    printf("Rovnica nema riesenie");
+  } else if (dis == 0) {
+    printf("Rovnica ma 1 riesenie.\n");
+    printf("x = %.2f", (-b) / (2 * a));
+  } else if (dis > 0) {
+    printf("Rovnica ma 2 riesenia.\n");
+    printf("x1 = %.2f\n", (-b + sqrt(dis)) / (2 * a));
+    printf("x2 = %.2f\n", (-b - sqrt(dis)) / (2 * a));
+  } else {
+    printf("nieco sa pokazilo\nskus znova");
+  }
 }
 
-void koren(float dis, float a, float b, float c) {
-	float x;
-	
-	x = (-b) / (2 * a);
-	
-	printf("Rovnica ma 1 riesenie.\nx = %.2f",x);
-}
+int main() {
+  float a, b, c;
 
-void korene(float dis, float a, float b, float c) {
-	float x1;
-	float x2;
-	
-	x1 = (-b + sqrt(dis)) / (2 * a);
-	x2 = (-b - sqrt(dis)) / (2 * a);
-	
-	printf("Rovnica ma 2 riesenia.\nx1 = %.2f\nx2 = %.2f",x1,x2);
-}
+  printf("zadaj koeficienty kvadratickej rovnice (a, b, c): ");
+  scanf("%f %f %f", &a, &b, &c);
 
-float dis(float a, float b, float c) {
-	float dis;
-	
-	dis = (b*b) - 4 * a * c;
-	if (dis < 0) {
-		korent();
-	}
-	else if (dis == 0) {
-		koren(dis, a, b, c);
-	}
-	else if (dis > 0) {
-		korene(dis, a, b, c);
-	}
-	else {
-		printf("nieco sa pokazilo\nskus znova");
-	}
-}
+  dis(a, b, c);
 
-int main(int argc, char *argv[]) {
-	float a, b, c;
-	
-	printf("zadaj koeficienty kvadratickej rovnice (a, b, c): ");
-	scanf("%f %f %f",&a,&b,&c);
-	
-	dis(a, b, c);
-	
-	return 0;
+  return 0;
 }
