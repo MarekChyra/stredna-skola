@@ -15,8 +15,8 @@ th {
   }
 
 table {
-    border-style: solid;
+    border-style: ridge;
     border-width: 5px;
-    border-color: blue;
+    border-color: lightblue;
     border-collapse: collapse;
   }
