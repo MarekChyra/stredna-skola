@@ -1,0 +1,22 @@
+najprv si povieme čo vlaste je arduino?
+
+Arduino je talianska firma, ktorá dizajnuje, vyrába a podporuje elektronické zariadenia a softvér a tým umožňuje ľuďom po celom svete sa zoznámiť s elektronikou. Ich zadiadenia sú cenovo dostupné, open-source, jednoduché a zároveň dostatočne výkonné aby uspokojili potreby nielen študentov ale aj profesionálnych developerov. Ich úloha je aby zjednodušili a zpríjemnili život ľudom bez toho aby museli prekonávať bariéru učenia sa programovať a porozumenia ako fungujú elektronicé zariadenia.
+
+História
+
+Firma vznila v roku 2008 ale projekt arduino začal v roku 2003 na Interaction Design Institute Ivrea v talianskom meste Ivrea. V tej dobe tím pozostával z 5 ľuďí a arduino používalo ATmega128 mikrokontróler ale nesôr ho vymenili za lacnejší ATmega8 mikrokontróler.
+
+Typy
+
+Arduino oficiálne vytvorilo 19 typov arduina a ktomu 10 výkonnejších typov arduina. K najpopulárnejším paria Arduino Uno, Arduino Mega a Arduino Nano.
+Arduino Uno má 14 digitálnych vstupo/výstupných pinov, z ktorých 6 môže byť použitých ako PWM výstupy, potom podporuje 6 analógových vstupov, 16MHz keramický resonátor a USB konektor.
+Arduino Mega má 54 digitálnych vstupno/výstupných pinov, z ktorých 15 môže byť použitých ako PWM výstupy, 16 analógových vstupov, 4 hardevérové sériové porty, 16 MHz kryštálový oscilátor a USB konektor.
+Arduino Nano je malá ale komplétna breadboard kompatibilná doska.
+
+čo je Arduino IDE
+
+IDE je integrované vývojarské prostredie, ktoré pozostáva z editora, kompilátora a debuggera. Arduino IDE je napísaný v Jave a programuje sa v ňom v jazyku C alebo C++. Obsahuje vlastný prekladač pre arduino dosky ale podporuje aj iné dosky ako napríkald ESP. Arduino IDE je cross-platform, čo znamená že je ho možné používať ako aj na windowse tak aj na linuxe alebo MACu.
+
+ako nezničiť arduino
+
+Arduino môžete zničiť tým, že prekročíte maximálne vstupné napätie, prekročíte maximálne výstupné napätie na pinoch, pripojíte piny alebo napájanie so zemou ale aj prepojovanie výstupov za behu. Existuje veľa spôsobov ako zničiť arduino ale tieto sú iba také základné, ktorým sa musíme vyhnúť.
